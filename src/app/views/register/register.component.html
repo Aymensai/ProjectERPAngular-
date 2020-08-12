@@ -1,0 +1,170 @@
+<div class="app-body">
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card mx-4">
+            <div class="card-body p-4">
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <h1>Register</h1>
+                <p class="text-muted">Create your account</p>
+
+                
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="icon-user"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="FirstName"
+                    formControlName="firstName"
+                    [ngClass]="{ 'is-invalid': isSubmitted && f.firstName.errors }"
+                  />
+                  <div *ngIf="isSubmitted && f.firstName.errors" class="col-12">
+                    <div *ngIf="f.firstName.errors.required" class="text-danger">
+                      <strong>FirstName is required</strong></div>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="icon-user"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="LastName"
+                    formControlName="lastName"
+                    [ngClass]="{ 'is-invalid': isSubmitted && f.lastName.errors }"
+                  />
+                  <div *ngIf="isSubmitted && f.lastName.errors" class="col-12">
+                    <div *ngIf="f.lastName.errors.required" class="text-danger">
+                      <strong>LastName is required</strong></div>
+                  </div>
+                </div>
+                <div class="input-group mb-3 ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="icon-user"></i
+                    ></span>
+                  </div>
+                   
+
+                  <input
+                    type="text"
+                    class="form-control is-invalid"
+                    placeholder="Adresse"
+                    formControlName="adresse"
+                    [ngClass]="{ 'is-invalid': isSubmitted && f.adresse.errors }"
+                    
+                  />
+                  <div *ngIf="isSubmitted && f.adresse.errors" class="col-12">
+                    <div *ngIf="f.adresse.errors.required" class="text-danger">
+                      <strong>Adresse is required</strong></div>
+                  </div>
+                  
+                </div>
+                <div class="input-group mb-3 ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="icon-user"></i
+                    ></span>
+                  </div>
+                   
+
+                  <input
+                    type="text"
+                    class="form-control is-invalid"
+                    placeholder="PhoneNumber"
+                    formControlName="phoneNumber"
+                    [ngClass]="{ 'is-invalid': isSubmitted && f.phoneNumber.errors }"
+                    
+                  />
+                  <div *ngIf="isSubmitted && f.phoneNumber.errors" class="col-12">
+                    <div *ngIf="f.phoneNumber.errors.required" class="text-danger">
+                      <strong>PhoneNumber is required</strong></div>
+                  </div>
+                  
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Email"
+                    formControlName="email"
+                    [ngClass]="{ 'is-invalid': isSubmitted && f.email.errors }"
+                  />
+                  <div *ngIf="isSubmitted && f.email.errors" class="col-12">
+                    <div *ngIf="f.email.errors.required" class="text-danger">
+                      <strong>Email is required</strong></div>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="icon-lock"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    formControlName="password"
+                    [ngClass]="{ 'is-invalid': isSubmitted && f.password.errors }"
+                  />
+                  <div *ngIf="isSubmitted && f.password.errors" class="col-12">
+                    <div *ngIf="f.password.errors.required" class="text-danger">
+                      <strong>Password is required</strong></div>
+                  </div>
+                </div>
+                <!-- <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="icon-user"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="role"
+                    class="form-control"
+                    placeholder="Role"
+                    formControlName="role"
+                    [ngClass]="{ 'is-invalid': isSubmitted && f.role.errors }"
+                  />
+                  <div *ngIf="isSubmitted && f.role.errors" class="col-12">
+                    <div *ngIf="f.role.errors.required" class="text-danger">
+                      <strong>Role is required</strong></div>
+                  </div>
+                </div> -->
+               
+                <button type="submit" class="btn btn-block btn-success">
+                  Create Account
+                </button>
+              </form>
+            </div>
+            <div class="card-footer p-4">
+              <div class="row">
+                <div class="col-6">
+                  <button class="btn btn-block btn-facebook" type="button">
+                    <span>facebook</span>
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-block btn-twitter" type="button">
+                    <span>twitter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
