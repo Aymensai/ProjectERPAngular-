@@ -18,9 +18,9 @@ export class RegisterComponent implements OnInit{
       private toasterService: ToasterService) { }
 
   ngOnInit():  void {
-    this.registerForm = new FormGroup({    
-      firstName: new FormControl("", Validators.required),
-      lastName : new FormControl("", Validators.required),
+    this.registerForm = new FormGroup({  
+
+      etablissement : new FormControl("", Validators.required),
       adresse : new FormControl("", Validators.required),
       phoneNumber : new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),

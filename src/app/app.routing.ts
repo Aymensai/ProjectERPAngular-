@@ -40,7 +40,7 @@ export const routes: Routes = [
     }
   },
   {
-    path: "reset-password/:id",
+    path: "reset-password/:token",
     component: ResetPasswordComponent,
     data: {
       title: "Page reset",

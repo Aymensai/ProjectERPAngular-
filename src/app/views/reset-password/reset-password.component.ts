@@ -29,18 +29,7 @@ export class ResetPasswordComponent implements OnInit {
     private toasterService: ToasterService
   ) {}
 
-  ngOnInit() {
-    this.Init();
-    this.route.queryParams.subscribe((param) => {
-      this.token = param["token"];
-    });
-  }
-
-  onCodeSubmit(f) {
-    this.code = Number(f.value.code);
-  }
-
-  Init() {
+  ngOnInit(): void {
     this.ResponseResetForm = new FormGroup({
       newPassword: new FormControl("", [
         Validators.required,
@@ -50,39 +39,26 @@ export class ResetPasswordComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]),
-    });
+      resetToken: new FormControl(this.token = this.route.snapshot.params["token"])
+      });
+      
   }
-
-  validatePassword() {
-    const new_password = this.ResponseResetForm.value.newPassword;
-    const confirm_password = this.ResponseResetForm.value.confirmPassword;
-
-    if (confirm_password.length <= 0) {
-      return true;
-    }
-
-    if (confirm_password !== new_password) {
-      return true;
-    }
-
-    return false;
-  }
-
-  ResetPassword() {
-    if (this.validatePassword()) {
-      return this.toasterService.pop('warning', 'Password does not match');
-    } else {
-      this.authService
-        .newPassword(
-          { newPassword: this.ResponseResetForm.value.newPassword.this.token},
-          
-        )
-        .subscribe((res: { message: string }) => {
-          return (
-            this.toasterService.pop('success', res.message) &&
-            this.router.navigateByUrl("/login")
-          );
-        });
+  get get() { return this.ResponseResetForm.controls; }
+  
+  ResetPassword() { 
+   if (this.ResponseResetForm.invalid) {
+     return;
+   }
+   
+    this.authService.newPassword(this.ResponseResetForm.value).subscribe((res: { message: string }) => {
+    this.toasterService.pop('success', res.message);  
+    this.router.navigateByUrl("/login"); }, (error)=>{
+      if ( error.status === 409 ) {
+      this.toasterService.pop('warning', error.error.message);
+    }});
     }
   }
-}
+
+
+
+    
