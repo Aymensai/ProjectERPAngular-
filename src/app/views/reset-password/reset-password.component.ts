@@ -39,16 +39,31 @@ export class ResetPasswordComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]),
+    
+     
       resetToken: new FormControl(this.token = this.route.snapshot.params["token"])
       });
       
   }
-  get get() { return this.ResponseResetForm.controls; }
-  
+  validatePassword() {
+    const new_password = this.ResponseResetForm.value.newPassword;
+    const confirm_password = this.ResponseResetForm.value.confirmPassword;
+
+    if (confirm_password.length <= 0) {
+      return true;
+    }
+
+    if (confirm_password !== new_password) {
+      return true;
+    }
+
+    return false;
+  }
+
   ResetPassword() { 
-   if (this.ResponseResetForm.invalid) {
-     return;
-   }
+    if (this.validatePassword()) {
+      return this.toasterService.pop('warning', 'Password Does Not Match');
+    } else {
    
     this.authService.newPassword(this.ResponseResetForm.value).subscribe((res: { message: string }) => {
     this.toasterService.pop('success', res.message);  
@@ -58,7 +73,7 @@ export class ResetPasswordComponent implements OnInit {
     }});
     }
   }
-
+}
 
 
     
