@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-head"></div>
+  <div class="card-body">
+    <h2>My Candidate</h2>
+
+    <form [formGroup]="addForm">
+      <input
+        type="text"
+        formControlName="firstName"
+        ng-model="addedCandidate"
+        size="50"
+        placeholder="FirstName"
+      />
+      <input
+        type="text"
+        formControlName="lastName"
+        ng-model="addedCandidate"
+        size="50"
+        placeholder="Lastname"
+      />
+      <input
+        type="text"
+        formControlName="adresse"
+        ng-model="addedCandidate"
+        size="50"
+        placeholder="Adresse"
+      />
+      <input
+        type="text"
+        formControlName="phoneNumber"
+        ng-model="addedCandidate"
+        size="50"
+        placeholder="PhoneNumber"
+      />
+      <input
+        type="text"
+        formControlName="email"
+        ng-model="addedCandidate"
+        size="50"
+        placeholder="Email"
+      />
+      <input type="submit" (click)="add()" value="Add New" />
+    </form>
+  </div>
+</div>

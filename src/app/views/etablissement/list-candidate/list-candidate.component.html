@@ -1,0 +1,31 @@
+
+<div class="card">
+    <div class="card-head">
+  
+    </div>
+    <div class="card-body">
+      <button class="btn btn-primary" routerLink='/candidates/add'> Add new </button>
+      
+  
+  
+      <table  border="1">
+        <tr>
+           
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Actions</td>
+        </tr>
+        <tr *ngFor="let candidate of candidates;">
+          <td class="card-title">{{ candidate.firstName }}</td>
+          <td class="card-title">{{ candidate.lastName }}</td>
+          <td> 
+            <button class="btn btn-info" > Details</button>
+            <button class="btn btn-warning" > Update</button>
+            <button class="btn btn-danger" > Delete</button>
+          </td> 
+        </tr>
+      </table>
+      
+    </div>
+  </div>
+  

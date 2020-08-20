@@ -42,6 +42,7 @@ export const routes: Routes = [
   {
     path: "reset-password/:token",
     component: ResetPasswordComponent,
+   
     data: {
       title: "Page reset",
     },
@@ -73,7 +74,10 @@ export const routes: Routes = [
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
-     
+      {
+        path: 'candidates',
+        loadChildren: () => import('./views/etablissement/candidate.module').then(m => m.CandidateModule)
+      },
     ]
   },
   { path: '**', component: P404Component }

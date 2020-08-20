@@ -56,6 +56,7 @@ import { ResetPasswordComponent } from './views/reset-password/reset-password.co
 import { ForgetPasswordComponent } from './views/forget-password/forget-password.component';
 import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from "@angular/material/icon";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -87,7 +88,8 @@ import { MatIconModule } from "@angular/material/icon";
     LoginComponent,
     RegisterComponent,
     ResetPasswordComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+   
   ],
   providers: [{
     provide: LocationStrategy,
