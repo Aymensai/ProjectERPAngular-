@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import {Candidateservice} from '../../../service/candidate.service'
+import {Candidateservice} from '../../../service/candidate.service';
+import { ToasterService } from 'angular2-toaster';
 @Component({
   selector: 'app-candidate-update',
   templateUrl: './candidate-update.component.html',
@@ -10,7 +11,7 @@ import {Candidateservice} from '../../../service/candidate.service'
 export class CandidateUpdateComponent implements OnInit {
   updateCandidateForm : FormGroup;
   id : any;
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private candidateservice : Candidateservice) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private candidateservice : Candidateservice,  private toasterService: ToasterService) { }
 
   ngOnInit(): void {
     this.updateCandidateForm = new FormGroup({  
@@ -32,6 +33,7 @@ export class CandidateUpdateComponent implements OnInit {
   }
   update() {
     this.candidateservice.updateCandidate(this.id, this.updateCandidateForm.value).subscribe((bodyresponse: any) => {
+      this.toasterService.pop('success', 'Candidate Updated Successfully');
       this.router.navigateByUrl('/candidates/list');
      });
     }

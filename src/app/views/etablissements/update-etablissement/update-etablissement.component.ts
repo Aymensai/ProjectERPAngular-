@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Etablissementservice } from '../../../service/etablissement.service';
-
+import { ToasterService } from 'angular2-toaster';
 @Component({
   selector: 'app-update-etablissement',
   templateUrl: './update-etablissement.component.html',
@@ -11,7 +11,8 @@ import { Etablissementservice } from '../../../service/etablissement.service';
 export class UpdateEtablissementComponent implements OnInit {
 updateForm : FormGroup;
 id : any;
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private etablissementservice : Etablissementservice ) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, 
+    private etablissementservice : Etablissementservice,  private toasterService: ToasterService ) { }
 
   ngOnInit(): void { 
     this.updateForm = new FormGroup({  
@@ -32,6 +33,7 @@ id : any;
   }
   update() {
     this.etablissementservice.updateEtablissement(this.id, this.updateForm.value).subscribe((bodyresponse: any) => {
+      this.toasterService.pop('success', 'Etablissement Updated Successfully');
       this.router.navigateByUrl('/etablissements/details/'+ this.id);
      });
     }

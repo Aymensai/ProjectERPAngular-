@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {Candidateservice} from '../../../service/candidate.service'
-
+import { ToasterService } from 'angular2-toaster';
 
 @Component({
   selector: 'app-add-candidate',
@@ -12,7 +12,7 @@ import {Candidateservice} from '../../../service/candidate.service'
 export class AddCandidateComponent implements OnInit {
 addForm : FormGroup;
 
-  constructor(private router: Router, private candidateservice : Candidateservice) { }
+  constructor(private router: Router, private candidateservice : Candidateservice, private toasterService: ToasterService) { }
 
   ngOnInit(): void {
     this.addForm = new FormGroup({
@@ -27,6 +27,7 @@ addForm : FormGroup;
   }
   add() {
     this.candidateservice.addCandidate(this.addForm.value).subscribe((bodyresponse: any) => {
+      this.toasterService.pop('success', 'Candidate Added Successfully');
       this.router.navigateByUrl('/candidates/list');
      });
   }
