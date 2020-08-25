@@ -19,9 +19,9 @@
           <td class="card-title">{{ candidate.firstName }}</td>
           <td class="card-title">{{ candidate.lastName }}</td>
           <td> 
-            <button class="btn btn-info" > Details</button>
-            <button class="btn btn-warning" > Update</button>
-            <button class="btn btn-danger" > Delete</button>
+            <button class="btn btn-info"  [routerLink]="['/candidates/details/', candidate._id]"> Details</button>
+            <button class="btn btn-warning" [routerLink]="['/candidates/update/', candidate._id]"> Update</button>
+            <button class="btn btn-danger" (click)="deleteCandidate(candidate._id)" > Delete</button>
           </td> 
         </tr>
       </table>

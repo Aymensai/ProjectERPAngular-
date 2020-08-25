@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   public isAuthenticated(): boolean {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('access_token');
    if (token === null || token === undefined)
    {
         return false;
@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   getToken() {
-   return localStorage.getItem('token');
+   return localStorage.getItem('access_token');
   }
 
   

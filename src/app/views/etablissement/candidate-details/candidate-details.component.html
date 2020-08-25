@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-head"></div>
+  <div class="card-body">
+    <h2>Details</h2>
+    <div *ngIf="detail">
+      <p>FirstName : {{ detail.firstName }}</p>
+      <span> </span>
+      <p>LastName : {{ detail.lastName }}</p>
+    
+    <p>Adresse : {{ detail.adresse }}</p>
+    <span> </span>
+    <p>PhoneNumber : {{ detail.phoneNumber }}</p>
+ <span></span>
+  <p>Email : {{ detail.email }}</p>
+  <span> </span>
+</div>
+</div>
+  <button class="btn btn-warning" routerLink="/candidates/list">Back</button>
+</div>

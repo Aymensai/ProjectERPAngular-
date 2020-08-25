@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-head">
+  
+    </div>
+    <div class="card-body">
+    <form [formGroup]="updateCandidateForm"  >
+      <input type="text" formControlName="firstName"  size="50" placeholder="Add FirstName">
+      <input type="text" formControlName="lastName"  size="50" placeholder="Add LastName">
+      <input type="text" formControlName="adresse" size="50" placeholder="Add Adresses">
+      <input type="text" formControlName="phoneNumber"  size="50" placeholder="Add PhoneNumber">
+      <input type="text" formControlName="email"  size="50" placeholder="Add Email">
+      <input type="submit" (click)="update()" value="Update" >
+  </form>
+    </div>
+  </div>

@@ -39,7 +39,16 @@
         size="50"
         placeholder="Email"
       />
+      <label *ngFor="let etablissement of
+      etablissement">Choose an etablissement:</label>
+
+<select >
+   <option value="">--Please choose an etablissement--</option>
+
+</select>
+<span></span>
       <input type="submit" (click)="add()" value="Add New" />
+     
     </form>
   </div>
 </div>

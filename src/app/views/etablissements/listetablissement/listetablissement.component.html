@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-head"></div>
+  <div class="card-body">
+    <table border="1">
+      <tr>
+        <td>Etablissement Name</td>
+
+        <td>Actions</td>
+      </tr>
+      <tr *ngFor="let etablissement of etablissements">
+        <td class="card-title">{{ etablissement.etablissement }}</td>
+
+        <td>
+          <button class="btn btn-info" [routerLink]="['/etablissements/details/', etablissement._id]">Details</button>
+         
+          <!-- <button class="btn btn-danger" (click)="deleteEtablissement(etablissement._id)">Delete</button> -->
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

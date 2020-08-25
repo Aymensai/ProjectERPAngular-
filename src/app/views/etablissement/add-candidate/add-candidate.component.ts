@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {EtablissementService} from '../../../service/etablisssement.service'
+import {Candidateservice} from '../../../service/candidate.service'
 
 
 @Component({
@@ -12,7 +12,7 @@ import {EtablissementService} from '../../../service/etablisssement.service'
 export class AddCandidateComponent implements OnInit {
 addForm : FormGroup;
 
-  constructor(private router: Router, private etablissementservice : EtablissementService) { }
+  constructor(private router: Router, private candidateservice : Candidateservice) { }
 
   ngOnInit(): void {
     this.addForm = new FormGroup({
@@ -21,10 +21,12 @@ addForm : FormGroup;
       adresse : new FormControl("", Validators.required),
       phoneNumber : new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
+      role : new FormControl("candidate")
+      
     });
   }
   add() {
-    this.etablissementservice.addCandidate(this.addForm.value).subscribe((bodyresponse: any) => {
+    this.candidateservice.addCandidate(this.addForm.value).subscribe((bodyresponse: any) => {
       this.router.navigateByUrl('/candidates/list');
      });
   }

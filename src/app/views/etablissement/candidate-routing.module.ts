@@ -2,6 +2,8 @@ import { Routes,  RouterModule } from '@angular/router';
 import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { ListCandidateComponent } from './list-candidate/list-candidate.component';
 import { NgModule } from '@angular/core';
+import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
+import { CandidateUpdateComponent } from './candidate-update/candidate-update.component';
 
 
 const routes: Routes = [
@@ -27,14 +29,22 @@ const routes: Routes = [
             title: 'Add Candidate'
           }
         },
+        {
+
+          path : 'details/:id',
+          component: CandidateDetailsComponent,
+          data: {
+            title: 'Details Candidate'
+          }
+        },
         
-      //  {
-      //     path : 'update/:id',
-      //   //   component: UpdateTodoComponent,
-      //     data: {
-      //       title: 'Update To do'
-      //     }
-      //   }, {
+       {
+          path : 'update/:id',
+          component: CandidateUpdateComponent,
+          data: {
+            title: 'Update Candidate'
+          }
+        }, 
       //     path : 'details/:id',
       //   //   component: DetailsTodoComponent,
       //     data: {

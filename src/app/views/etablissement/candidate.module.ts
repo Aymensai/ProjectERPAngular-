@@ -5,10 +5,13 @@ import { ListCandidateComponent } from './list-candidate/list-candidate.componen
 import { CandidateRoutingModule} from './candidate-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
+import { CandidateUpdateComponent } from './candidate-update/candidate-update.component';
+
 
 
 @NgModule({
-  declarations: [AddCandidateComponent, ListCandidateComponent],
+  declarations: [AddCandidateComponent, ListCandidateComponent, CandidateDetailsComponent, CandidateUpdateComponent],
   imports: [
     CommonModule,
     CandidateRoutingModule,

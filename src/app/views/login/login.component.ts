@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(this.loginForm.value).subscribe((bodyresponse: any) => {
-      localStorage.setItem('token',bodyresponse.token);
+      localStorage.setItem('access_token',bodyresponse.token);
       this.toasterService.pop('success', 'Access Granted', 'Welcome');
       this.router.navigateByUrl('/dashboard');
      });
