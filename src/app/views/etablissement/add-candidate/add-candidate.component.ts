@@ -21,7 +21,7 @@ addForm : FormGroup;
       adresse : new FormControl("", Validators.required),
       phoneNumber : new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
-      role : new FormControl("candidate")
+      role : new FormControl("candidate"),
       
     });
   }

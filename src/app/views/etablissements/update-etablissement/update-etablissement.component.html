@@ -8,6 +8,10 @@
       <input type="text" formControlName="adresse"  size="50" placeholder="Add Adresse">
       <input type="text" formControlName="phoneNumber"  size="50" placeholder="Add PhoneNumber">
       <input type="text" formControlName="email"  size="50" placeholder="Add Email">
+    
+      <select *ngFor= "let candidate of candidates;" formControlName="candidate">
+        <option>{{ candidate.firstName }}</option>
+      </select>
       <input type="submit" (click)="update()" value="Update" >
   </form>
     </div>
