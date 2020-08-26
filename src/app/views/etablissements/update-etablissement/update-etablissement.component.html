@@ -3,14 +3,15 @@
   
     </div>
     <div class="card-body">
-    <form [formGroup]="updateForm"  >
+    <form [formGroup]="updateForm">
       <input type="text" formControlName="etablissement"  size="50" placeholder="Add Etablissement">
       <input type="text" formControlName="adresse"  size="50" placeholder="Add Adresse">
       <input type="text" formControlName="phoneNumber"  size="50" placeholder="Add PhoneNumber">
       <input type="text" formControlName="email"  size="50" placeholder="Add Email">
+        
     
-      <select *ngFor= "let candidate of candidates;" formControlName="candidate">
-        <option>{{ candidate.firstName }}</option>
+      <select  formControlName="candidate">
+        <option *ngFor= "let candidate of candidates;">{{ candidate.firstName }}</option>
       </select>
       <input type="submit" (click)="update()" value="Update" >
   </form>

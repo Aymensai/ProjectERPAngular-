@@ -13,27 +13,27 @@ export class Candidateservice {
   }
  
   getCandidates(){
-    return this.http.get(this.baseUrl + 'users');
+    return this.http.get(this.baseUrl + 'candidate');
   }
 
     getCandidate(id){
-        return this.http.get(this.baseUrl+ 'users/'+ id);
+        return this.http.get(this.baseUrl+ 'candidate/'+ id);
     }
 
   
     addCandidate(addedCandidate){
-      return this.http.post(this.baseUrl + 'users' , addedCandidate);
+      return this.http.post(this.baseUrl + 'candidate' , addedCandidate);
     }
 
    
     updateCandidate(id, editedCandidate){
-        return this.http.put(this.baseUrl +'users/' + id , editedCandidate);
+        return this.http.put(this.baseUrl +'candidate/' + id , editedCandidate);
        
   
     }
 
     deleteCandidate(id){
-        return this.http.delete(this.baseUrl +'users/' + id) ;
+        return this.http.delete(this.baseUrl +'candidate/' + id) ;
     }
 
 }

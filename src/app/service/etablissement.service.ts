@@ -31,4 +31,7 @@ export class Etablissementservice {
         return this.http.delete(this.baseUrl +'users/' + id) ;
     }
 
+    sendMailtoall(data){
+        return this.http.post(this.baseUrl +'/sendMail'  ,  data);
+}
 }

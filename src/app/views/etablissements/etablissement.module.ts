@@ -6,15 +6,16 @@ import { ListetablissementComponent } from './listetablissement/listetablissemen
 import { DetailEtablissementComponent } from './detail-etablissement/detail-etablissement.component';
 import { UpdateEtablissementComponent } from './update-etablissement/update-etablissement.component';
 import { EtablissementRoutingModule } from './etabllissement-routing.module';
+import { MailingComponent } from './mailing/mailing.component';
 
 @NgModule({
-    declarations: [ListetablissementComponent, DetailEtablissementComponent, UpdateEtablissementComponent ],
+    declarations: [ListetablissementComponent, DetailEtablissementComponent, UpdateEtablissementComponent, MailingComponent ],
     imports: [
       CommonModule,
       EtablissementRoutingModule,
       HttpClientModule,
       FormsModule,
-      ReactiveFormsModule,
+      ReactiveFormsModule,     
     ]
   })
   export class EtablissementModule { }
