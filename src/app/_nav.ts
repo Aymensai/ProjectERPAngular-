@@ -21,6 +21,11 @@ export const navItems: INavData[] = [
     url: '/candidates/list',
     icon: 'icon-star',
   },
+  {
+    name: 'Mailing ',
+    url: '/etablissements/mailing',
+    icon: 'icon-star',
+  },
   
   // {
   //   title: true,

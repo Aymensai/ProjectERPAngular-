@@ -32,7 +32,7 @@ export class Etablissementservice {
     }
 
     sendMailtoall(data){
-        return this.http.post(this.baseUrl +'/sendMail'  ,  data);
+        return this.http.post(this.baseUrl +'sendMail'  ,  data);
 }
 
 

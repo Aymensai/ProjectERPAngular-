@@ -8,6 +8,8 @@ import { UpdateEtablissementComponent } from './update-etablissement/update-etab
 import { EtablissementRoutingModule } from './etabllissement-routing.module';
 import { MailingComponent } from './mailing/mailing.component';
 import { AffectCanComponent } from './affect-can/affect-can.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AffectCanComponent } from './affect-can/affect-can.component';
       EtablissementRoutingModule,
       HttpClientModule,
       FormsModule,
-      ReactiveFormsModule,     
+      ReactiveFormsModule,   
+      MatInputModule,
+      MatIconModule  
     ]
   })
   export class EtablissementModule { }

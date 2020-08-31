@@ -24,7 +24,7 @@ export class MailingComponent implements OnInit {
   }
   sendmail() {
     this.etablisementservice.sendMailtoall(this.mailForm.value).subscribe((res: any) => {});
-    this.toasterService.pop('success', 'success', 'mail has been sended ');
+    this.toasterService.pop('success','Mail has been sent');
     this.router.navigateByUrl("/dashboard");
   }
 
