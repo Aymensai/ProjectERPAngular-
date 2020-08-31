@@ -17,9 +17,9 @@ loadEtablissement(){
     this.etablissements = bodyresponse;
   });
 }
-deleteEtablissement(id) { 
-  this.etablissementservice.deleteEtablissement(id).subscribe((bodyresponse: any) => {   
-    this.ngOnInit();   
-  });
-}
+// deleteEtablissement(id) { 
+//   this.etablissementservice.deleteEtablissement(id).subscribe((bodyresponse: any) => {   
+//     this.ngOnInit();   
+//   });
+// }
 }

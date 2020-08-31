@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import { navItems } from '../../_nav';
 import { Router } from '@angular/router';
+import { PictureService } from '../../service/picture.service';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './default-layout.component.html'
@@ -8,8 +10,15 @@ import { Router } from '@angular/router';
 export class DefaultLayoutComponent {
   public sidebarMinimized = false;
   public navItems = navItems;
-  constructor(private router: Router){
+picture : any;
+  constructor(private router: Router, private pictureService : PictureService)
+  { }
+
+  
+  ngOnInit() : void {
+
   }
+ 
   toggleMinimize(e) {
     this.sidebarMinimized = e;
   }

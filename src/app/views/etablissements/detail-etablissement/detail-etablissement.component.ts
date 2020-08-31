@@ -23,7 +23,7 @@ detail : any;
   }
   loadEtablissementById(){
     this.etablissementservice.getEtablissement(this.id).subscribe((bodyresponse)=>{
-      this.detail = (bodyresponse);
+      this.detail = bodyresponse;
       });
   
   }

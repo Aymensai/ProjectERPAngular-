@@ -11,13 +11,10 @@
       <span> </span>
       <p>Email : {{ detail.email }}</p>
       <span> </span>
+      <button class="btn btn-warning" [routerLink]="['/etablissements/update/', detail._id]" >Update</button>
+      <button class="btn btn-info" routerLink="/etablissements/list">
+        Back
+      </button>
     </div>
-   
-    <button class="btn btn-warning" [routerLink]="['/etablissements/update/', detail._id]" >Update</button>
-    <button class="btn btn-info" routerLink="/etablissements/list">
-      Back
-    </button>
   </div>
-
-  
 </div>
