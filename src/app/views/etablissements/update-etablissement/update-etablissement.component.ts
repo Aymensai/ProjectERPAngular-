@@ -13,6 +13,7 @@ export class UpdateEtablissementComponent implements OnInit {
 updateForm : FormGroup;
 id : any;
 candidates : any;
+
   constructor(private activatedRoute: ActivatedRoute, private router: Router, 
     private etablissementservice : Etablissementservice,  private toasterService: ToasterService,private candidateservice : Candidateservice ) { }
 
@@ -30,7 +31,7 @@ candidates : any;
       adresse : new FormControl("", Validators.required),
       phoneNumber : new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
-      candidate : new FormControl("", Validators.required),
+      candidates : new FormControl("", Validators.required),
       role : new FormControl("etablissement"),
 
     });

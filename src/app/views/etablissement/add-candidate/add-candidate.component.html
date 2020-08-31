@@ -1,50 +1,61 @@
 <div class="card">
   <div class="card-head"></div>
   <div class="card-body">
-    <h2>My Candidate</h2>
+    <h2 class="font-italic">My Candidate</h2>
 
     <form [formGroup]="addForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
       <input
         type="text"
+        class="form-control"
         formControlName="firstName"
         ng-model="addedCandidate"
         size="50"
         placeholder="FirstName"
       />
+    </div>
+    <div class="form-group col-md-6">
       <input
         type="text"
+        class="form-control"
         formControlName="lastName"
         ng-model="addedCandidate"
         size="50"
         placeholder="Lastname"
-      />
+      /></div>
+      <div class="form-group col-md-6">
       <input
         type="text"
+        class="form-control"
         formControlName="adresse"
         ng-model="addedCandidate"
         size="50"
         placeholder="Adresse"
-      />
+      /></div>
+      <div class="form-group col-md-6">
       <input
         type="text"
+        class="form-control"
         formControlName="phoneNumber"
         ng-model="addedCandidate"
         size="50"
         placeholder="PhoneNumber"
-      />
+      /></div>
+      <div class="form-group col-md-6">
       <input
         type="text"
+        class="form-control"
         formControlName="email"
         ng-model="addedCandidate"
         size="50"
         placeholder="Email"
       />
-     
-
-
+     </div>
 <span></span>
-      <input type="submit" (click)="add()" value="Add New" />
-     
+</div>
+      <input class="btn btn-primary" type="submit" (click)="add()" value="Add New" />
+      
     </form>
   </div>
 </div>

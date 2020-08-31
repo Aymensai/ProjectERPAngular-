@@ -1,19 +1,55 @@
 <div class="card">
-    <div class="card-head">
-  
-    </div>
-    <div class="card-body">
+  <div class="card-head"></div>
+  <div class="card-body">
     <form [formGroup]="updateForm">
-      <input type="text" formControlName="etablissement"  size="50" placeholder="Add Etablissement">
-      <input type="text" formControlName="adresse"  size="50" placeholder="Add Adresse">
-      <input type="text" formControlName="phoneNumber"  size="50" placeholder="Add PhoneNumber">
-      <input type="text" formControlName="email"  size="50" placeholder="Add Email">
-        
-    
-      <select  formControlName="candidate">
-        <option *ngFor= "let candidate of candidates;">{{ candidate.firstName }}</option>
-      </select>
-      <input type="submit" (click)="update()" value="Update" >
-  </form>
-    </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input
+            class="form-control"
+            type="text"
+            formControlName="etablissement"
+            size="50"
+            placeholder="Add Etablissement"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <input
+            class="form-control"
+            type="text"
+            formControlName="adresse"
+            size="50"
+            placeholder="Add Adresse"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="phoneNumber"
+            size="50"
+            placeholder="Add PhoneNumber"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="email"
+            size="50"
+            placeholder="Add Email"
+          />
+        </div>
+     
+     
+     
+      </div>
+     <br>
+      <input
+        class="btn btn-primary"
+        type="submit"
+        (click)="update()"
+        value="Update"
+      />
+    </form>
   </div>
+</div>

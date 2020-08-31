@@ -46,7 +46,7 @@
     "@material/form-field": "^7.0.0",
     "angular-material": "^1.2.0",
     "angular2-toaster": "^8.0.0",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.2",
     "chart.js": "^2.9.3",
     "core-js": "^3.6.5",
     "flag-icon-css": "^3.5.0",

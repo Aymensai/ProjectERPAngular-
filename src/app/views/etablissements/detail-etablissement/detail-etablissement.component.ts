@@ -16,10 +16,7 @@ detail : any;
   constructor(private activatedRoute: ActivatedRoute, private etablissementservice : Etablissementservice, private candidateservice : Candidateservice) { }
 
   ngOnInit(): void {
-   
-   
-      
-   
+
     this.id = this.activatedRoute.snapshot.params["id"];
     this.loadEtablissementById();
     

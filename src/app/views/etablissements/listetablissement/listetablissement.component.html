@@ -1,18 +1,18 @@
 <div class="card">
   <div class="card-head"></div>
   <div class="card-body">
-    <table border="1">
-      <tr>
-        <td>Etablissement Name</td>
+    <table class="table">
+      <tr class="table-primary">
+        <td scope="col" class="font-weight-bold">Etablissement Name</td>
 
-        <td>Actions</td>
+        <td scope="col" class="font-weight-bold">Actions</td>
       </tr>
       <tr *ngFor="let etablissement of etablissements">
-        <td class="card-title">{{ etablissement.etablissement }}</td>
+        <td class="font-italic">{{ etablissement.etablissement }}</td>
 
         <td>
           <button class="btn btn-info" [routerLink]="['/etablissements/details/', etablissement._id]">Details</button>
-         
+          <button class="btn btn-secondary" [routerLink]="['/candidates/add/', etablissement._id]" >Add Candidates</button>
           <!-- <button class="btn btn-danger" (click)="deleteEtablissement(etablissement._id)">Delete</button> -->
         </td>
       </tr>

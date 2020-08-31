@@ -1,31 +1,44 @@
-
 <div class="card">
-    <div class="card-head">
-  
-    </div>
-    <div class="card-body">
-      <button class="btn btn-primary" routerLink='/candidates/add'> Add new </button>
-      
-  
-  
-      <table  border="1">
-        <tr>
-           
-          <td>First Name</td>
-          <td>Last Name</td>
-          <td>Actions</td>
+  <div class="card-head"></div>
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr class="table-warning">
+          <td scope="col" class="font-weight-bold" >First Name</td>
+          <td scope="col" class="font-weight-bold">Last Name</td>
+          <td scope="col" class="font-weight-bold">Actions</td>
         </tr>
-        <tr *ngFor="let candidate of candidates;">
-          <td class="card-title">{{ candidate.firstName }}</td>
-          <td class="card-title">{{ candidate.lastName }}</td>
-          <td> 
-            <button class="btn btn-info"  [routerLink]="['/candidates/details/', candidate._id]"> Details</button>
-            <button class="btn btn-warning" [routerLink]="['/candidates/update/', candidate._id]"> Update</button>
-            <button class="btn btn-danger" (click)="deleteCandidate(candidate._id)" > Delete</button>
-          </td> 
+      </thead>
+      <tbody>
+        <tr *ngFor="let candidate of candidates">
+         
+          <td class="font-italic">{{ candidate.firstName }}</td>
+          <td class="font-italic">{{ candidate.lastName }}</td>
+          <td>
+            <button
+              class="btn btn-info"
+              [routerLink]="['/candidates/details/', candidate._id]"
+            >
+              Details
+            </button>
+            <button
+              class="btn btn-warning"
+              [routerLink]="['/candidates/update/', candidate._id]"
+            >
+              Update
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="deleteCandidate(candidate._id)"
+            >
+              Delete
+            </button>
+          </td>
         </tr>
-      </table>
-      
-    </div>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" routerLink="/candidates/add">
+      Add new
+    </button>
   </div>
-  
+</div>

@@ -23,7 +23,7 @@ const routes: Routes = [
         },
         {
 
-          path : 'add',
+          path : 'add/:id',
           component: AddCandidateComponent,
           data: {
             title: 'Add Candidate'

@@ -35,5 +35,7 @@ export class Candidateservice {
     deleteCandidate(id){
         return this.http.delete(this.baseUrl +'candidate/' + id) ;
     }
-
+    affectCandidate(idEtablissement, idCandidate ){
+      return this.http.post(this.baseUrl + 'affect/' + idEtablissement  + '/' + idCandidate, {});
+    }
 }

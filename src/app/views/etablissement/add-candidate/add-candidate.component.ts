@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {Candidateservice} from '../../../service/candidate.service'
 import { ToasterService } from 'angular2-toaster';
 
@@ -11,8 +11,9 @@ import { ToasterService } from 'angular2-toaster';
 })
 export class AddCandidateComponent implements OnInit {
 addForm : FormGroup;
+idEtablissement;
 
-  constructor(private router: Router, private candidateservice : Candidateservice, private toasterService: ToasterService) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private candidateservice : Candidateservice, private toasterService: ToasterService) { }
 
   ngOnInit(): void {
     this.addForm = new FormGroup({
@@ -24,11 +25,16 @@ addForm : FormGroup;
       role : new FormControl("candidate"),
       
     });
+    this.idEtablissement= this.activatedRoute.snapshot.params["id"];
+ 
   }
   add() {
     this.candidateservice.addCandidate(this.addForm.value).subscribe((bodyresponse: any) => {
-      this.toasterService.pop('success', 'Candidate Added Successfully');
-      this.router.navigateByUrl('/candidates/list');
+      this.candidateservice.affectCandidate(this.idEtablissement, bodyresponse._id).subscribe((response)=>{
+          this.toasterService.pop('success', 'Candidate Added Successfully');
+          this.router.navigateByUrl('/candidates/list');
+      });
+     
      });
   }
 }

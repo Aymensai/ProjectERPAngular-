@@ -7,9 +7,11 @@ import { DetailEtablissementComponent } from './detail-etablissement/detail-etab
 import { UpdateEtablissementComponent } from './update-etablissement/update-etablissement.component';
 import { EtablissementRoutingModule } from './etabllissement-routing.module';
 import { MailingComponent } from './mailing/mailing.component';
+import { AffectCanComponent } from './affect-can/affect-can.component';
+
 
 @NgModule({
-    declarations: [ListetablissementComponent, DetailEtablissementComponent, UpdateEtablissementComponent, MailingComponent ],
+    declarations: [ListetablissementComponent, DetailEtablissementComponent, UpdateEtablissementComponent, MailingComponent, AffectCanComponent,  ],
     imports: [
       CommonModule,
       EtablissementRoutingModule,

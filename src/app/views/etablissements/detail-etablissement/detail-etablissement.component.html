@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-head"></div>
   <div class="card-body">
-    <h2>Details</h2>
+    <h2 class="font-italic">Details</h2>
     <div *ngIf="detail">
       <p>Etablissement : {{ detail.etablissement }}</p>
       <span> </span>
@@ -12,15 +12,12 @@
       <p>Email : {{ detail.email }}</p>
       <span> </span>
     </div>
-    <button class="btn btn-warning" routerLink='/candidates/add' >Add Candidates</button>
+   
     <button class="btn btn-warning" [routerLink]="['/etablissements/update/', detail._id]" >Update</button>
-    <button class="btn btn-warning" routerLink="/etablissements/list">
+    <button class="btn btn-info" routerLink="/etablissements/list">
       Back
     </button>
   </div>
-  <div class="card-head"></div>
-  <div class="card-body">
-    <h2 >Candidates</h2>
+
   
-</div>
 </div>
