@@ -49,7 +49,7 @@ candidates : any;
   update() {
     this.etablissementservice.updateEtablissement(this.id, this.updateForm.value).subscribe((bodyresponse: any) => {
       this.toasterService.pop('success', 'Etablissement Updated Successfully');
-      console.log(this.updateForm.value);
+     
       this.router.navigateByUrl('/etablissements/details/'+ this.id);
      });
     }
