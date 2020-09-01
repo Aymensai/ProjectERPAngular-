@@ -45,8 +45,12 @@ id ;
       formData.append('picture', this.picture.file);
       this.picture.pending = true;
       this.pictureService.uploadPicture(this.decode.data._id, formData).subscribe(
-        (res) => {
+        (res: any) => {
+          localStorage.setItem("picture", res.picture)
+        
+          
           this.onSuccess();
+          this.pictureService.reloadPicture();
         },
         (err) => {
           this.onError();
