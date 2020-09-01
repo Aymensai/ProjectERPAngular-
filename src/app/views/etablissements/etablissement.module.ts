@@ -7,13 +7,14 @@ import { DetailEtablissementComponent } from './detail-etablissement/detail-etab
 import { UpdateEtablissementComponent } from './update-etablissement/update-etablissement.component';
 import { EtablissementRoutingModule } from './etabllissement-routing.module';
 import { MailingComponent } from './mailing/mailing.component';
-import { AffectCanComponent } from './affect-can/affect-can.component';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { UploadPictureComponent } from './upload-picture/upload-picture.component';
 
 
 @NgModule({
-    declarations: [ListetablissementComponent, DetailEtablissementComponent, UpdateEtablissementComponent, MailingComponent, AffectCanComponent,  ],
+    declarations: [ListetablissementComponent, DetailEtablissementComponent, UpdateEtablissementComponent, MailingComponent, UploadPictureComponent  ],
     imports: [
       CommonModule,
       EtablissementRoutingModule,

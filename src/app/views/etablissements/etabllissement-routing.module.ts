@@ -4,6 +4,7 @@ import { ListetablissementComponent } from './listetablissement/listetablissemen
 import { DetailEtablissementComponent } from './detail-etablissement/detail-etablissement.component';
 import { UpdateEtablissementComponent } from './update-etablissement/update-etablissement.component';
 import { MailingComponent } from './mailing/mailing.component';
+import { UploadPictureComponent } from './upload-picture/upload-picture.component';
 const routes: Routes = [
     {
       path: '',
@@ -41,6 +42,14 @@ const routes: Routes = [
             component: MailingComponent,
             data: {
               title: 'Mailing'
+            }
+          },
+          {
+
+            path : 'upload',
+            component: UploadPictureComponent,
+            data: {
+              title: 'Upload'
             }
           },
         ]

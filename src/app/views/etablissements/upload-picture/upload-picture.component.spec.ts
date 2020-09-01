@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AffectCanComponent } from './affect-can.component';
+import { UploadPictureComponent } from './upload-picture.component';
 
-describe('AffectCanComponent', () => {
-  let component: AffectCanComponent;
-  let fixture: ComponentFixture<AffectCanComponent>;
+describe('UploadPictureComponent', () => {
+  let component: UploadPictureComponent;
+  let fixture: ComponentFixture<UploadPictureComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AffectCanComponent ]
+      declarations: [ UploadPictureComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AffectCanComponent);
+    fixture = TestBed.createComponent(UploadPictureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

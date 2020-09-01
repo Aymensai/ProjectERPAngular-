@@ -1,0 +1,30 @@
+
+
+<form class="md-form" >
+  <div class="file-field">
+    <div class="btn btn-primary btn-sm float-left">
+    <span><h3>Select Your Picture</h3></span>
+    <input #imageInput
+           type="file"
+           accept="image/*"
+           (change)="processFile(imageInput)">
+           
+
+  
+  
+  <div *ngIf="picture" class="img-preview-container">
+  
+    <div class="img-preview{{picture.status === 'fail' ? '-error' : ''}}"
+         [ngStyle]="{'background-image': 'url('+ picture.src + ')'}">
+    </div>
+  
+    <div *ngIf="picture.pending" class="img-loading-overlay">
+      <div class="img-spinning-circle"></div>
+    </div>
+  
+    <div *ngIf="picture.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+    <div *ngIf="picture.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+  </div>
+</div>
+</div>
+</form>
