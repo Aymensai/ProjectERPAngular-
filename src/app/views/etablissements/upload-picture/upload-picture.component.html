@@ -1,6 +1,4 @@
-
-
-<form class="md-form" >
+<!-- <form class="md-form" >
   <div class="file-field">
     <div class="btn btn-primary btn-sm float-left">
     <span><h3>Select Your Picture</h3></span>
@@ -27,4 +25,41 @@
   </div>
 </div>
 </div>
-</form>
+</form> -->
+<div class="container py-5">
+  <!-- For demo purpose -->
+  <header class="text-white text-center">
+    <h1 class="display-4">Picture Upload</h1>
+    <p class="lead mb-0"></p>
+    <p class="mb-5 font-weight-light">
+      <a class="text-white">
+        <u></u>
+      </a>
+    </p>
+    <img
+      src="https://res.cloudinary.com/mhmd/image/upload/v1564991372/image_pxlho1.svg"
+      alt=""
+      width="150"
+      class="mb-4"
+    />
+  </header>
+  <div class="row py-4">
+    <div class="col-lg-6 mx-auto">
+      <!-- Upload image input-->
+      <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+        <label class="btn btn-light m-0 rounded-pill px-4">
+          <div class="input-group-append">
+            <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+            <input
+              class="text-uppercase font-weight-bold text-muted"
+              #imageInput
+              type="file"
+              accept="image/*"
+              (change)="processFile(imageInput)"
+            />
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PictureService } from '../../../service/picture.service';
 import * as jwt_decode from 'jwt-decode';
+import { ToasterService } from 'angular2-toaster';
+import { Router } from '@angular/router';
 class ImageSnippet {
   pending: boolean = false;
   status: string = 'init';
@@ -17,7 +19,7 @@ export class UploadPictureComponent  {
 
   picture: ImageSnippet;
 
-  constructor(private pictureService : PictureService)
+  constructor(private pictureService : PictureService, private toasterService: ToasterService, private router: Router)
   {}
   access_token = localStorage.getItem('access_token');
   decode = jwt_decode(this.access_token);
@@ -51,6 +53,8 @@ id ;
           
           this.onSuccess();
           this.pictureService.reloadPicture();
+           this.toasterService.pop('success', 'Picture Uploaded Successfully');
+           this.router.navigateByUrl('/etablissements/list')
         },
         (err) => {
           this.onError();
